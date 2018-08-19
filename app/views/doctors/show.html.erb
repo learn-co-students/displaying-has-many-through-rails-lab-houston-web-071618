@@ -1,0 +1,18 @@
+<h1>Doctor <%= @doctor.name%></h1>
+<p>Create a Doctor#show page that displays the doctor's name, department, and appointments, with each appointment's date, time, and patient name (linking to the patient's show page).</p>
+<%=button_to 'All doctors', doctors_path, method: 'get' %>
+<ul>
+  <li>Department:<%=@doctor.department%></li>
+
+<li>Appointments:</li>
+
+<ul>
+  <%@doctor.appointments.each do |appointment|%>
+
+  <li><%=link_to appointment.date_and_time,appointment_path(appointment) %>
+    -
+    <%= link_to appointment.patient.name, patient_path(appointment.patient)%></li>
+
+<%end%>
+</ul>
+</ul>
