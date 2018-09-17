@@ -1,0 +1,8 @@
+<h1>Appointments#show</h1>
+<p>
+    <a href="<%= doctor_path(@appointment.doctor) %>" ><%= @appointment.doctor.name %></a>
+     has an appointment with <a href="<%= patient_path(@appointment.patient) %>"><%= @appointment.patient.name %></a>
+     on <%= @appointment.appointment_datetime.strftime('%B %d, %Y at %H:%M') %>
+</p>
+
+
